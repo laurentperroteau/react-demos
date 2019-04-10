@@ -8,7 +8,6 @@ type State = {
 
 export default class VirtualDOMCalculator extends React.Component<Props, State> {
   input: any;
-  countHTML = 0;
   countRender = 0;
 
   constructor(props: Props) {
@@ -25,16 +24,15 @@ export default class VirtualDOMCalculator extends React.Component<Props, State> 
     this.countRender++;
 
     return <div>
-      <div>Ajouter une quantité au compteur:<br />
+      <div>Ajouter 1 puis zéro :<br />
         <input type="text" ref={this.input} />
         <button id="add" onClick={this._addToCounter.bind(this)}>Add</button>
-        <br /><em>Ajouter 1 puis zéro</em>
       </div>
       <h2>Résultats:</h2>
       <ul>
         <li>Compteur virtual DOM: {this.state.count} (si on ajoute zéro, le DOM n'est pas actualisé)</li>
         <li>Compteur DOM: <span id="count">{this.state.count}</span> (si on ajoute zéro, le DOM est <strong>actualisé</strong>)</li>
-        <li>Compte render: {this.countRender}</li>
+        <li>Quantité de "rendu": {this.countRender}</li>
       </ul>
 
     </div>;

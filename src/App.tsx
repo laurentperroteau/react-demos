@@ -1,27 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 import './App.css';
+import Hello from './Hello/Hello';
+import VirtualDOMCalculator from './VirtualDOMCalculator/VirtualDOMCalculator';
+import PropsStatesLifes from './PropsStatesLifes/PropsStatesLifes';
+import MousePosition from './MousePosition/MousePosition';
 
 class App extends Component {
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+    return [
+      <Hello key="hello" name="world"/>,
+      <Router key="router">
+        <div>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/VirtualDOMCalculator">VirtualDOMCalculator</Link>
+              </li>
+              <li>
+                <Link to="/PropsStatesLifes">Props/state lifes</Link>
+              </li>
+              <li>
+                <Link to="/MousePosition/">MousePosition</Link>
+              </li>
+            </ul>
+          </nav>
+
+          <Route path="/VirtualDOMCalculator" exact component={VirtualDOMCalculator} />
+          <Route path="/PropsStatesLifes" component={() => <PropsStatesLifes rootProps="coucou" />} />
+          <Route path="/MousePosition" component={MousePosition} />
+        </div>
+      </Router>
+    ];
   }
 }
 
