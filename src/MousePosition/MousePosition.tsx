@@ -1,7 +1,7 @@
 import React from 'react';
 
 type Props = {
-  onUpdate: Function;
+  onUpdate?: Function;
 }
 
 export type MousePositionType = {
@@ -9,7 +9,7 @@ export type MousePositionType = {
   y: number;
 }
 
-export default class MousePosition extends React.Component<Props, null> {
+export default class MousePosition extends React.Component<Props, {}> {
 
   constructor(props: Props) {
     super(props);
@@ -30,6 +30,8 @@ export default class MousePosition extends React.Component<Props, null> {
   }
 
   _onMouseMove(e: any) {
-    this.props.onUpdate({ x: e.clientX, y: e.clientY });
+    if (this.props.onUpdate) {
+      this.props.onUpdate({ x: e.clientX, y: e.clientY });
+    }
   }
 }

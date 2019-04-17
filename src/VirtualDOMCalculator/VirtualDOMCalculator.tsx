@@ -24,7 +24,7 @@ export default class VirtualDOMCalculator extends React.Component<Props, State> 
     this.countRender++;
 
     return <div>
-      <div>Ajouter 1 puis zéro :<br />
+      <div>Inspecter la liste, ajouter 1 puis 0 :<br />
         <input type="text" ref={this.input} />
         <button id="add" onClick={this._addToCounter.bind(this)}>Add</button>
       </div>
