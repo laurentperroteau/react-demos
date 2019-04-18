@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './ReactIsJustFunctionsJSExemple.ts';
+import './JSFunctionsExemple.ts';
 
 class ReactIsJustFunctions extends Component<any, any> {
   constructor(props: any) {

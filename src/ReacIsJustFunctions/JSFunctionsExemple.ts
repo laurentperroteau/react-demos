@@ -3,10 +3,6 @@ const coucouObject = {
   property: 'v1'
 };
 
-function superCoucou(coucuoObject: any) {
-  coucou(coucuoObject);
-}
-
 function coucou(coucuoObject: any) {
   console.log(coucuoObject);
 
@@ -14,6 +10,10 @@ function coucou(coucuoObject: any) {
     coucuoObject.property = 'v2';
     console.log(coucuoObject);
   }, 2000);
+}
+
+function superCoucou(coucuoObject: any) {
+  coucou(coucuoObject);
 }
 
 superCoucou(coucouObject);
