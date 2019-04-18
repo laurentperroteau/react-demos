@@ -1,5 +1,4 @@
 import React from 'react';
-
 import NewRender from './NewRender';
 
 let renderForce = 0;

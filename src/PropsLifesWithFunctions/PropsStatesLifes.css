@@ -14,10 +14,6 @@
   background: rgba(255, 50, 36, 0.3);
 }
 
-.lifes--child {
-  background: rgba(51, 255, 50, 0.3);
-}
-
 .lifes__inner {
   display: flex;
 }

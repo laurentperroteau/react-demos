@@ -7,6 +7,8 @@ import VirtualDOMCalculator from './VirtualDOMCalculator/VirtualDOMCalculator';
 import PropsStatesLifes from './PropsStatesLifes/PropsStatesLifes';
 import MousePosition from './MousePosition/MousePosition';
 import PropInStateProblem from './PropInStateProblem/PropInStateProblem';
+import ReactIsJustFunctions from './ReacIsJustFunctions/ReactIsJustFunctions';
+import { PropsLifesWithFunctions } from './PropsLifesWithFunctions/PropsLifesWithFunctions';
 
 class App extends Component {
   render() {
@@ -20,10 +22,16 @@ class App extends Component {
                 <Link to="/VirtualDOMCalculator">VirtualDOMCalculator</Link>
               </li>
               <li>
-                <Link to="/PropInStateProblem">Prop in state problem</Link>
+                <Link to="/ReactIsJustFonctions">React is just function</Link>
+              </li>
+              <li>
+                <Link to="/PropsLifesWithFunctions">Props lifes only with funtions</Link>
               </li>
               <li>
                 <Link to="/PropsStatesLifes">Props/state lifes</Link>
+              </li>
+              <li>
+                <Link to="/PropInStateProblem">Prop in state problem</Link>
               </li>
               <li>
                 <Link to="/MousePosition/">MousePosition</Link>
@@ -32,6 +40,8 @@ class App extends Component {
           </nav>
 
           <Route path="/VirtualDOMCalculator" exact component={VirtualDOMCalculator} />
+          <Route path="/ReactIsJustFonctions" component={ReactIsJustFunctions} />
+          <Route path="/PropsLifesWithFunctions" component={() => <PropsLifesWithFunctions rootProps="coucou" />} />
           <Route path="/PropInStateProblem" component={PropInStateProblem} />
           <Route path="/PropsStatesLifes" component={() => <PropsStatesLifes rootProps="coucou" />} />
           <Route path="/MousePosition" component={MousePosition} />

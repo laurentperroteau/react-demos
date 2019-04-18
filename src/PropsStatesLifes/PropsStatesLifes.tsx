@@ -1,9 +1,10 @@
 import React, { Component, PureComponent, useState } from 'react';
 
 import './PropsStatesLifes.css';
-import NewRender from './NewRender';
 import PropsStatesLifesParent from './PropsStatesLifesParent';
-import { PropsStatesLifesItem, PropsStatesLifesItemPure } from './PropsStatesLifesItem';
+import NewRender from './NewRender';
+import { PropsLifesWithFunctionsItem, PropsLifesWithFunctionsItemPropertyMemo } from '../PropsLifesWithFunctions/PropsLifesWithFunctionsItem';
+import { PropsStatesLifesItemPure, PropsStatesLifesItemPropertyPure } from './PropsStatesLifesItem';
 
 type StateObject = {
   property: string;
@@ -61,7 +62,7 @@ export default class PropsStatesLifes extends React.Component<Props, StateGrandF
     return <div className="lifes-ctn">
       <div className="lifes lifes--grand-parent">
         <div className="lifes__name">
-          <h2>Grand parent (<NewRender key={renderForce} />) TODO faire pareil en angular</h2>
+          <h2>Grand parent (<NewRender key={renderForce} />)</h2>
         </div>
         <div className="lifes__name">
           <button onClick={this._updateState.bind(this, 'primitive-up')}>update primitive (sans setState, voir dans console)</button>
@@ -84,9 +85,12 @@ export default class PropsStatesLifes extends React.Component<Props, StateGrandF
         </pre>
           </div>
           <div>
-            <PropsStatesLifesItem item={this.state.arrayOfObject[0]} />
+            <PropsLifesWithFunctionsItem item={this.state.arrayOfObject[0]} />
+            <PropsLifesWithFunctionsItem item={this.state.arrayOfObject[1]} />
+            <PropsStatesLifesItemPure item={this.state.arrayOfObject[0]} />
             <PropsStatesLifesItemPure item={this.state.arrayOfObject[1]} />
-            <PropsStatesLifesItemPure property={this.state.arrayOfObject[1].property} />
+            <PropsStatesLifesItemPropertyPure property={this.state.arrayOfObject[0].property} />
+            <PropsStatesLifesItemPropertyPure property={this.state.arrayOfObject[1].property} />
           </div>
         </div>
         <div>
