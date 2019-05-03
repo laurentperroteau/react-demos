@@ -3,21 +3,21 @@ const coucouObject = {
   property: 'v1'
 };
 
-function coucou(coucuoObject: any) {
-  console.log(coucuoObject);
+function ChildComponent(coucouObject: any) {
+  console.log('Coucou child', coucouObject);
 
   setTimeout(() => {
-    coucuoObject.property = 'v2';
-    console.log(coucuoObject);
+    coucouObject.property = 'v2';
+    console.log("Coucou modifier à l'intérieur du ChildComponent après 2s", coucouObject);
   }, 2000);
 }
 
-function superCoucou(coucuoObject: any) {
-  coucou(coucuoObject);
+function ParentComponent(coucouObject: any) {
+  ChildComponent(coucouObject);
 }
 
-superCoucou(coucouObject);
+ParentComponent(coucouObject);
 
 setTimeout(() => {
-  console.log(coucouObject);
+  console.log("Coucou à l'extérieur des composants après 4s",coucouObject);
 }, 4000);

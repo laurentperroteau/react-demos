@@ -25,7 +25,7 @@ class App extends Component {
                 <Link to="/ReactIsJustFonctions">React is just function</Link>
               </li>
               <li>
-                <Link to="/PropsLifesWithFunctions">Props lifes only with funtions</Link>
+                <Link to="/PropsLifesWithFunctions">Props lifes only with funtions ++</Link>
               </li>
               <li>
                 <Link to="/PropsStatesLifes">Props/state lifes</Link>

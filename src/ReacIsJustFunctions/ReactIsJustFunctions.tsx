@@ -26,9 +26,10 @@ class ReactIsJustFunctions extends Component<any, any> {
   render() {
     return [
       <div
+        key="html"
         dangerouslySetInnerHTML={{ __html: parentComponent(this.state.prop) }}>
       </div>,
-      <div>
+      <div key="text">
         <h4>Conclusions :</h4>
         <ul>
           <li>Javascript passe les valeurs aux fonctions "par référence" ("par valeur" si primitive)</li>

@@ -72,8 +72,8 @@ export const PropsLifesWithFunctions: React.FC<Props> = () => {
       <div>
         <h4>Conclusions :</h4>
         <ul>
-          <li>un changement de prop déclenche le rendu de tous ses enfants</li>
-          <li>on peut utilisé Memo mais ne fonctionnera pas avec propriété imbriqué (le composant tout de même actualisé)</li>
+          <li>un changement de prop déclenche toujours le rendu de tous ses enfants</li>
+          <li>on peut utiliser Memo mais ne fonctionnera pas avec propriété imbriquée (le composant sera tout de même actualisé)</li>
         </ul>
       </div>
     </div>
